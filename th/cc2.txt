@@ -1,0 +1,62 @@
+Salesforce and Apex Programming: Theory
+Salesforce is one of the world's leading customer relationship management (CRM) platforms, widely used to manage business operations, sales, customer service, and marketing. Salesforce offers a cloud-based platform with various services, and Apex is its proprietary programming language designed for development within the Salesforce ecosystem. Here’s a breakdown of Salesforce and Apex programming theory:
+
+1. Salesforce Overview:
+Salesforce provides a suite of cloud-based applications that help businesses manage customer relationships, automate processes, and improve efficiency. The platform includes various services like Sales Cloud, Service Cloud, Marketing Cloud, and more.
+
+Key Features of Salesforce:
+Cloud Platform: Salesforce operates entirely on the cloud, enabling businesses to scale without needing on-premise infrastructure.
+
+Customizable and Extensible: Businesses can tailor the platform using Salesforce's powerful customization features such as custom objects, fields, and workflows.
+
+Multi-tenant Architecture: Salesforce is built on a multi-tenant model, meaning all customers share the same infrastructure while keeping their data isolated.
+
+AppExchange: The AppExchange is Salesforce's marketplace for third-party apps and integrations, allowing businesses to extend the functionality of the platform.
+
+Integration: Salesforce allows integration with external systems through various methods like APIs (REST, SOAP), middleware, and other tools.
+
+2. Apex Programming:
+Apex is a strongly typed, object-oriented programming language specifically developed for the Salesforce platform. It is used to write custom logic that runs on the Salesforce platform, such as triggers, controllers, or batch jobs.
+
+Key Features of Apex:
+Object-Oriented: Apex follows object-oriented principles like inheritance, polymorphism, and encapsulation. It supports classes, interfaces, and inheritance.
+
+Built-in Database Support: Apex has direct access to Salesforce's database (called Salesforce Object Query Language or SOQL), which allows developers to retrieve and manipulate data in Salesforce objects like Accounts, Contacts, and Opportunities.
+
+Multitenancy: Apex code is designed to run on Salesforce’s multi-tenant environment, meaning it must be optimized for shared resources.
+
+Governor Limits: Salesforce enforces strict limits on the number of operations that can be performed within a given transaction. Apex developers must ensure their code doesn't exceed these Governor Limits.
+
+Apex Use Cases:
+Triggers: Automatically run custom logic before or after records are inserted, updated, deleted, or undeleted.
+
+Visualforce Pages: Apex can control Visualforce pages, which are custom UI pages built on Salesforce.
+
+Scheduled Jobs: Apex allows scheduling of jobs to run at specific times, useful for automating recurring tasks like data cleaning or notifications.
+
+Batch Apex: This is used for processing large datasets in chunks, often necessary for handling bulk data operations.
+
+Web Services: Apex supports integration with other systems using both RESTful and SOAP web services.
+
+3. Salesforce Data Model:
+Salesforce's data model is at the core of the platform. It is built around objects, which are analogous to database tables, and records, which are analogous to rows in a database.
+
+Key Concepts in Salesforce Data Model:
+Objects: There are two types of objects in Salesforce:
+
+Standard Objects: These are pre-built objects such as Account, Contact, Lead, and Opportunity.
+
+Custom Objects: These are user-defined objects, which allow businesses to store custom data.
+
+Fields: Each object has fields, which store individual data points. Fields can be of various types, such as text, number, picklist, date, etc.
+
+Relationships: Objects in Salesforce can be related to one another. The main types of relationships are:
+
+Lookup Relationship: Similar to a foreign key in relational databases.
+
+Master-Detail Relationship: A stronger relationship where the child record's lifecycle is tied to the parent record.
+
+Many-to-Many Relationship: Achieved using junction objects.
+
+Records: These represent instances of an object. For example, an Account object could have a record representing a particular customer.
+
