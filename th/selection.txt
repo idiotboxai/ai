@@ -1,0 +1,63 @@
+Selection Sort is a simple comparison-based sorting algorithm. The main idea behind Selection Sort is to divide the list into two parts:
+
+The sorted part (initially empty)
+
+The unsorted part (the entire list at the beginning)
+
+In each step, the algorithm selects the smallest (or largest, depending on the order) element from the unsorted part and swaps it with the leftmost unsorted element. This gradually grows the sorted part of the list while shrinking the unsorted part.
+
+Greedy Selection Sort is a variant of the Selection Sort where at each step:
+
+The algorithm "greedily" selects the minimum element from the unsorted part of the list and places it at the correct position in the sorted part.
+
+Steps in the Algorithm:
+Initialize the Sorted Section: Initially, the sorted section is empty, and the unsorted section is the entire list.
+
+Find the Minimum Element: From the unsorted part of the array, find the element with the minimum value.
+
+Swap: Swap the found minimum element with the first unsorted element (the leftmost element of the unsorted part).
+
+Expand the Sorted Section: This process ensures that the sorted section increases in size while the unsorted section decreases.
+
+Repeat until the entire array is sorted.
+
+Detailed Explanation:
+find_min_index function: This function iterates through the unsorted portion of the list and finds the index of the smallest element. This index is used to swap the smallest element with the leftmost unsorted element.
+
+swap_elements function: After finding the minimum element in the unsorted section, this function swaps it with the leftmost unsorted element.
+
+greedy_selection_sort function: This is the main function that drives the algorithm. It goes through the array, repeatedly selecting the minimum element and placing it in the sorted section. It continues this process until the entire array is sorted.
+
+Output of the steps: The algorithm prints the array state after each swap to show how the array evolves towards being sorted.
+
+Properties of Selection Sort:
+Time Complexity:
+
+The time complexity of Selection Sort is O(n²), where n is the number of elements in the array. This is because for each element, you search the remaining unsorted part of the array to find the minimum.
+
+Specifically, there are n iterations, and in each iteration, there is a comparison of all remaining n-i elements, resulting in O(n²) comparisons.
+
+Space Complexity:
+
+The space complexity of Selection Sort is O(1) because it sorts the array in place without requiring extra memory.
+
+Stability:
+
+Selection Sort is not stable because if two elements have equal values, their relative order might not be preserved after swapping.
+
+In-Place Sorting:
+
+Selection Sort is an in-place sorting algorithm, meaning it does not require additional memory for another array, and it sorts the array by swapping elements within the original array.
+
+Advantages of Selection Sort:
+Simplicity: Selection Sort is easy to implement and understand.
+
+Constant Space: It sorts the array in place, which means it uses a constant amount of extra memory.
+
+Disadvantages of Selection Sort:
+Inefficient for Large Lists: Its time complexity of O(n²) makes it inefficient for large arrays compared to more efficient algorithms like Merge Sort or Quick Sort.
+
+Not Adaptive: Selection Sort always makes the same number of comparisons, regardless of whether the array is already sorted or not.
+
+Use Cases:
+Selection Sort is mostly used for educational purposes to demonstrate the basic concept of sorting algorithms. It is not commonly used in real-world applications for large datasets due to its inefficiency. However, it can still be useful in small datasets where simplicity and low memory usage are preferred.

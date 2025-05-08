@@ -1,0 +1,44 @@
+Kruskal's algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a connected, weighted graph. The MST is a subset of the edges of the graph that connects all the vertices together, without any cycles, and with the minimum possible total edge weight.
+
+Key Concepts:
+Greedy Approach: Kruskal's algorithm works by always choosing the smallest available edge that doesn't form a cycle.
+
+Disjoint Set (Union-Find): This data structure is used to efficiently manage and check connected components during the algorithm, ensuring no cycles are created.
+
+Steps of Kruskal's Algorithm:
+Sort edges: Start by sorting all the edges in the graph by their weight, in non-decreasing order.
+
+Initialize the MST: Start with an empty MST.
+
+Process each edge:
+
+Take the edge with the smallest weight from the sorted list.
+
+Use the Union-Find data structure to check if the two vertices of the edge are in different connected components:
+
+If they are in different components, add the edge to the MST and unite the components.
+
+If they are already in the same component (i.e., adding this edge would create a cycle), discard the edge.
+
+Repeat until there are (V-1) edges in the MST, where V is the number of vertices in the graph.
+
+Termination:
+The algorithm terminates once (V-1) edges have been added to the MST. This is because a spanning tree with V vertices always has (V-1) edges.
+
+Output:
+The algorithm outputs the Minimum Spanning Tree consisting of the edges chosen and the total weight of the MST.
+
+Time Complexity:
+O(E log E): Sorting the edges takes O(E log E) time. The Union-Find operations (with path compression and union by rank) take nearly constant time, i.e., O(α(V)), where α is the inverse Ackermann function, which grows very slowly.
+
+Thus, the time complexity is dominated by the sorting step, i.e., O(E log E).
+
+Space Complexity:
+O(V + E): The algorithm uses space for storing the graph's edges and vertices, as well as the disjoint set data structure.
+
+Practical Use Cases:
+Network Design: Used in designing least-cost networks (like telecommunications or computer networks).
+
+Cluster Analysis: Useful in clustering problems where you want to connect the closest data points.
+
+Circuit Design: Helps minimize the number of wires needed to connect components while minimizing the cost.

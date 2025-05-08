@@ -1,0 +1,53 @@
+Dijkstra's Algorithm is a greedy algorithm used to find the shortest path between nodes in a graph, particularly for graphs with non-negative edge weights. The algorithm works by iteratively selecting the node with the smallest known distance from the start node and updating the distances to its neighbors.
+
+Key Concepts:
+Graph Representation:
+
+The graph is represented as an adjacency list, where each node has a list of its neighboring nodes and the corresponding edge weights (distance or cost).
+
+Initialization:
+
+A dictionary (dist) is initialized with a value of infinity (inf) for all nodes, except for the start node, which is initialized to 0 (since the distance from the start node to itself is zero).
+
+Priority Queue:
+
+A min-heap priority queue (or min-heap) is used to efficiently fetch the node with the smallest tentative distance. Initially, the start node is added to the queue with a distance of 0.
+
+Relaxation:
+
+The algorithm proceeds by removing the node with the smallest distance (i.e., the node at the top of the heap), and it checks all its neighbors. For each neighbor, the algorithm calculates the distance from the start node by adding the current node's distance to the edge's weight. If this new calculated distance is smaller than the previously recorded distance for that neighbor, it updates the neighbor's distance and adds it to the priority queue for further exploration.
+
+Termination:
+
+The process continues until all nodes have been visited, and the algorithm has found the shortest distance to every node from the start node.
+
+Final Output:
+
+Once the algorithm terminates, the shortest distance from the start node to all other nodes is printed. If a node is unreachable, its distance will remain as infinity (inf).
+
+Complexity:
+Time Complexity:
+
+O((V + E) log V), where:
+
+V is the number of vertices (nodes).
+
+E is the number of edges.
+
+The logarithmic factor comes from the operations on the priority queue.
+
+Space Complexity:
+
+O(V + E), as the graph is represented in an adjacency list and the distances for each node need to be stored.
+
+Practical Applications:
+Routing and Navigation: Used in GPS systems to find the shortest route between two locations.
+
+Network Traffic: Helps in finding the optimal path for data transmission in networking.
+
+Social Networks: Used to find the shortest path between users or connections.
+
+Properties:
+Greedy: Dijkstra’s Algorithm always chooses the node with the smallest tentative distance at each step, making it a greedy algorithm.
+
+Optimality: The algorithm guarantees the shortest path to every node in a graph with non-negative edge weights.

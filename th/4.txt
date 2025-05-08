@@ -1,0 +1,84 @@
+The N-Queens problem is a classic example of a backtracking algorithm. The task is to place N queens on an N x N chessboard such that no two queens can attack each other. The challenge lies in the fact that a queen can attack any piece in the same row, column, or diagonal. The goal is to find all possible solutions to this problem, or at least one solution.
+
+Problem Explanation:
+You are given a chessboard of size N x N (where N is a positive integer).
+
+You need to place N queens on the board such that:
+
+No two queens are in the same row.
+
+No two queens are in the same column.
+
+No two queens are on the same diagonal.
+
+Backtracking Approach:
+Backtracking is an algorithmic technique used to solve problems incrementally, abandoning solutions ("backtracking") as soon as we determine that they are not viable. In the case of the N-Queens problem, we attempt to place queens one row at a time and check if the current configuration is valid. If we find an invalid configuration (i.e., a queen can attack another), we backtrack and try another position.
+
+The solution involves recursively trying to place queens in different columns of each row. For each row, we need to check if placing a queen in a particular column would cause a conflict with any previously placed queens.
+
+Steps Involved in Solving the N-Queens Problem:
+Start from Row 0: Begin placing queens starting from the first row.
+
+Check for Safety: For each column in the current row, check if it's safe to place a queen. The position is safe if:
+
+There is no queen in the same column.
+
+There is no queen in the same diagonal.
+
+Place a Queen: If the position is safe, place a queen in that column, and mark that column and both diagonals as "attacked."
+
+Move to the Next Row: Recursively move to the next row.
+
+Backtrack if Needed: If no safe column is found for the current row, backtrack to the previous row and try the next column.
+
+Print Solution: Once all queens are placed on the board, print the configuration. If you want to find all solutions, continue the search after finding a valid solution.
+
+Key Concepts:
+Columns: We use an array (or list) cols of size N to mark which columns are under attack. If cols[col] = True, it means that column is under attack by a queen.
+
+Diagonals: There are two types of diagonals:
+
+Primary diagonal (top-left to bottom-right): The difference between the row and column indices is constant for any position on this diagonal. We use the formula row - col.
+
+Secondary diagonal (top-right to bottom-left): The sum of the row and column indices is constant for any position on this diagonal. We use the formula row + col.
+
+These diagonals are tracked using two dictionaries: diag1 for the primary diagonal and diag2 for the secondary diagonal.
+
+Backtracking: When a queen cannot be placed safely in any column of a row, the algorithm "backtracks" by removing the queen from the previous row and tries a different column.
+
+Algorithm Breakdown:
+Base Case: If a queen is placed on every row (i.e., row == N), we have found a valid solution.
+
+Recursive Case: For each row, try placing a queen in each column and check if it’s safe. If it is, mark that column and both diagonals as attacked, then move to the next row.
+
+Backtracking: If placing a queen in a column doesn’t lead to a solution, "unmark" the column and diagonals and try the next column.
+
+Complexity:
+Time Complexity: The worst-case time complexity is O(N!) because, in the worst case, the algorithm must try all possible placements of N queens, where N is the number of rows and columns. This results in N! permutations.
+
+Space Complexity: The space complexity is O(N) due to the arrays used to track the attacked columns and diagonals, as well as the recursion stack.
+
+Example:
+For N = 4, there is a solution where the queens are placed in the following positions (rows are numbered from 0 to 3):
+
+css
+Copy
+Edit
+. Q . .
+. . . Q
+Q . . .
+. . Q .
+In this configuration:
+
+No two queens are in the same row, column, or diagonal, so it is a valid solution.
+
+Applications:
+The N-Queens problem is used to teach various concepts in computer science, including:
+
+Backtracking algorithms.
+
+Constraint satisfaction problems (CSP).
+
+Recursive problem solving.
+
+The N-Queens problem also serves as a benchmark for various optimization and algorithmic techniques, especially in artificial intelligence and constraint programming.
